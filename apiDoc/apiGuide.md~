@@ -1,0 +1,88 @@
+% A short introduction to the API that is used by the MDCS
+% N. Stenberg
+
+
+# Introduction
+
+The MDCS works as a storage point for all structured data and meta data
+that is derrived from Swedish research on materials for Additive
+manufacturing (AM).
+
+The MDCS has two ways of interaction, the web interface and the Rest
+API. A Rest API is basically a couple of dedicated web pages where information
+can be exchanged as opposed to a "full" API where information exchange
+is separated from the web server.
+
+
+# API background
+
+The API documentation is on the web site
+
+https://amdata.proj.kth.se/docs/api
+
+click on **Help** and chose API documentation.
+
+
+## Benefits with using the API
+
+- Direct access to data
+- can use python!
+- can use whatever code You like!!
+- save all overhead in files
+- can write post/get scripts directly into calculation flows
+
+
+# API and python3
+
+Focus is on python3. RestAPIs have a dedicated module, **requests**.
+Some other data handling modulas are needed too.
+
+## Prerequisites
+
+- requests
+- numpy
+- json
+- xmltodict
+- pandas
+- io
+
+Use pip or repositories based on preference. Some packages are only
+available via pip.
+
+for pip, based on platform, use either:
+
+```
+$ pip install requests numpy json xmltodict pandas io
+$ pip3 install requests numpy json xmltodict pandas io
+$ python3 -m pip install requests numpy json xmltodict pandas io
+```
+
+# The *requests* function
+
+*requests* works according to the documentation. 
+
+![The documentation of the rest API is a web page where one can try
+some functions](bilder/swagger1.png)
+
+a typical request looks like:
+
+```
+requests.get('url', data={dict}, auth=(tuple))
+```
+
+The output is in some binary json format. If the output is interesting
+parse the output via the json interpreter:
+
+```
+output = json.loads(requests.get('url', data={dict},
+         auth=(tuple)).text)
+```
+
+The 'url' is controlling what type of request it is.
+
+To post data the 'url' = '<base_url>/rest/data'
+
+
+
+
+
