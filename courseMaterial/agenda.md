@@ -1,4 +1,4 @@
-% Swedish instance of MDCS for AM
+% Swedish instance of MDCS for AM : amdata
 % N. Stenberg and G. Lindvall
 
 
@@ -13,7 +13,7 @@
 	- API
 - Consensus template (is that possible?)
 	- Alt. some templates to use from
-	- **Note:** not definitive updata will come later
+	- **Note:** not definitive! updata will come later
 
 - Use it all.
 
@@ -43,4 +43,4 @@
 	- python
 	- other
 	
-
+	
