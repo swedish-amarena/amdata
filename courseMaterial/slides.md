@@ -1,91 +1,109 @@
-% Swedish instance of MDCS for AM : amdata
+% the Swedish instance of MDCS for AM : amdata
 % N. Stenberg and G. Lindvall
+
+
+# Today
+
+- whoami? (sorry - the mandatory *"presentation round"*)
+	- as short as possible: **Not!** a full bio.
+- The day:  **DIP-C** (newly made up acronym!)
+	- datacentric 
+	- interactive (We hope...)
+	- pragmatic
+	- collaborative
 
 
 # Why? (motivation)
 
-Materials data development is incremental. Everone takes small steps
-and it is only by communication rapid groth can be obtained.
+## 
 
-**amdata.proj.kth.se** is a collaborative backbone.
+Materials data development is **incremental**. Everyone takes small steps
+and it is only by communicating **rapid growth** can be obtained.
 
-# Share your results
+## alas!
 
-and you will recieve a multitude of information.
+**amdata.proj.kth.se**   ---  a collaborative backbone.
 
 
-# The future needs data too
+# The service
+
+- **amdata.proj.kth.se** is owned by *the Arena*
+- It is a service for **You!**
+- *Only* curation of materials data.
+- Easy to use:  web or API
+
+
+# more motivation
+
+\bco\co
+
+**Share your results**
+
+and you will receive a multitude of information.
+
+\co
+
+**The future needs data too**
 
 By saving current data future development will be in uptempo!
 
+\eco
 
-# How does data look like?
 
-- A multitude of file formats
-	- some even propriatary
-- Fairly often just fragments
-- Naming is not uniform
+# What does data look like?
+
+- a multitude of file formats
+	- some even proprietary
+- non uniform structure
+- naming is not uniform
+- fairly often just data fragments
 - data is spread over several HDs and servers
-- duplicates yield uncertenty
+- duplicates yield uncertainty
 - no version control
 - ...
+
 
 
 # amdata.proj.kth.se
 
 - It is a server and a Database
-- code developed by NIST in MGI
+- code developed by NIST within the scope of MGI
 - based on open packages (django, mongoDB, ...)
 - hosted by KTH-IT 
-	- (fantastic bandwidth)
+	- fantastic bandwidth
+	- no own commercial agenda
+	- solid
+	- cheap
+
 
 # Features of amdata
 
+\bco\co
+
 - web interface
 - API
+- user centred
 - structure based on *templates*
-- user 
+
+![](bilder/template.png)
 
 
-##Scope
+\co
 
-- How? 
-	- Structure of data : How does data look
-	- Templates
-	- site
-	- downloads
-	- API
-- Consensus template (is that possible?)
-	- Alt. some templates to use from
-	- **Note:** not definitive! updata will come later
+![](bilder/mdcs.png)
+\eco
 
-- Use it all.
+# workflow
+
+- define a template
+- fill the fields with data
+- save it
+
+Several templates can coexist
+
+**Suggestion is to just have a handful of templates.**
 
 
+# Now, it is time for template:ing
 
-# Agenda Day 1
-
-<!-- Computers is a must -->
-<!-- Everybody should think in advance on the amount of data and -->
-<!-- the structure of it. Just to make it easier to make templates -->
-
-- Intro
-	- What is it?
-	- Who owns the data?
-	- Why?
-	- 
-- How does it work?
-	- Find data
-	- Save data
-
-- Structure
-
-- Templates?
-	- What data is saved
-	
-- API
-	- python
-	- other
-	
-	
-
+\cent{Your turn to participate!\\ \swb It is one of these interactive moments}

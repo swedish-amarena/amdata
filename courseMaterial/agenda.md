@@ -17,19 +17,29 @@
 
 - Use it all.
 
+# saker att ta upp och andra frågor
+
+- kärnan ligger inte i tekniken. Det är datan som är kärnan. **Börja
+  med datan?**
+- **deltagande?** Hur får vi deltagande?
+	- workshopförmiddag med datastrukturerande?
+
+- vilka datastrukturgrupperingar finns det?
+	- hur många? Greta?
+- Behöver vi en kollaborativ miljö för template-skapande?
 
 
-# Agenda Day 1
 
-<!-- Computers is a must -->
-<!-- Everybody should think in advance on the amount of data and -->
-<!-- the structure of it. Just to make it easier to make templates -->
+# Outline Day 1
 
-- Intro
-	- What is it?
+- Intro 1h
+	- who are we?
+	- What is data?
 	- Who owns the data?
 	- Why?
 	- 
+	
+	
 - How does it work?
 	- Find data
 	- Save data
@@ -43,4 +53,14 @@
 	- python
 	- other
 	
+
+
+
+## Prerequisites
+
+- Computers is a must
+- Everybody should think in advance on the amount of data and
+- the structure of it. Just to make it easier to make templates
+
+
 	
