@@ -4,7 +4,52 @@
 
 # Scope
 
+- vilka är alla?   
+- projekttidplan
 - Why? (motivation)
+- Site
+- Student visar exempel på data  Greta frågar någon trevlig student
+- Fundera på template
+- lunch
+- ta dataexempel och gör template
+- lägg in allt
+	- web
+	- api
+- samla alla dataexempel i grupper  workshop
+- grupperna skapar templateembryo
+- mer om api (15min)
+- ansvariga för varje grupp
+- visa alla vilka kontakter som finns
+- nästa möte
+	- round trip
+	- final + lessons learnt
+
+
+
+
+
+- använder alla github?
+
+
+
+# todo
+
+## Greta 
+
+- hitta någon som vill presentera data
+- locka studenter
+- exempel "data driven development"
+
+# niclas
+
+- vänta på data
+- prata med IT om site
+- 
+
+# old
+
+
+
 - How? 
 	- Structure of data : How does data look
 	- Templates
