@@ -156,7 +156,7 @@ def makeGlobal(dataId, auth):
     wdata = json.loads(requests.get(durl, auth=(auth['user'],
                                                auth['passwd'])).text)
     for item in wdata:
-        if "Global" in item['title']:
+        if "AMdataWorkspace" in item['title']:
             wId = item['id']
     try:
         wurl = auth['url'] + '/rest/data/' + str(dataId) + '/assign/' + str(wId)
