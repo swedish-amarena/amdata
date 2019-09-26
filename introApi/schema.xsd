@@ -1,0 +1,13 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  	<xsd:include
+	    schemaLocation="http://localhost:80/rest/template/5d8b1ef9e914bb5f75849c9f/download/"/>
+	<xsd:element name="root" type="simpleStart"/>
+  
+	<xsd:complexType name="simpleStart">
+		<xsd:sequence>
+		  <xsd:element name="Place" type="xsd:string"/>
+		  <xsd:element name="date" type="xsd:string"/>
+		  <xsd:element name="firstType" type="ui"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

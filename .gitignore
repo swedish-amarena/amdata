@@ -1,6 +1,8 @@
 # backup files
 *~
 
+# flymake
+*_flymake*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
