@@ -1,0 +1,8 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  	<xsd:element name="root" type="TypOne"/>
+  
+	<xsd:complexType name="TypOne">
+		<xsd:sequence>
+		<xsd:element name="MaterialName" type="xsd:string"/><xsd:element name="YoungsModulus" type="xsd:string"/><xsd:element name="PoissinsRatio" type="xsd:string"/></xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

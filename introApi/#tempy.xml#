@@ -1,0 +1,9 @@
+<root  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       >
+  <Number>1</Number>
+  <Room>101</Room>
+  <tempType>
+    <Name>Fisken</Name>
+    <Temp>20</Temp>
+  </tempType>
+</root>

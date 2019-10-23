@@ -1,0 +1,5 @@
+<root  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <MaterialName>Jonas</MaterialName>
+  <YoungsModulus>210000000</YoungsModulus>
+  <PoissinsRatio>.3</PoissinsRatio>
+</root>
