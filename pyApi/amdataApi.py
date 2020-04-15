@@ -102,6 +102,60 @@ def templateId(tmplName, auth):
     return tid
 
 
+def listTemplates(auth):
+    '''
+    returns two dict with { 'name': 'id' } where 
+    'name' is the given name for that template
+    'id' is the id-number of the currently used version of the template
+         if an older version is needed use the requests command that 
+         is seen here in this function
+    
+    output: 
+    the Global templates
+    and
+    the User's templates
+
+    dictG, dictU = listTemplates(auth)
+    '''
+
+    # --- the REST urls ---
+    tmpGlobal = auth['url'] + '/rest/template-version-manager/global/'
+    tmpUser = auth['url'] + '/rest/template-version-manager/user/'
+    # --- getting the lists ---
+    tlistG = json.loads(requests.get(tmpGlobal, auth=(auth['user'],
+                                                      auth['passwd'])).text)
+    tlistU = json.loads(requests.get(tmpUser, auth=(auth['user'],
+                                                    auth['passwd'])).text)
+
+    # --- making dicts ---
+    dictG = {}
+    for item in tlistG:
+        dictG[item['title']] = item['current']
+
+    dictU = {}
+    for item in tlistU:
+        dictU[item['title']] = item['current']
+
+    return dictG, dictU
+
+
+def getTemplate(tId, auth):
+    '''
+    returns the content part of the templateId instance as a dict.
+
+    The content in that dict needs to be checked because the 
+    structure varies dependent on how conplex the template is.
+
+    tpDict = getTemplate(tId, auth)
+    '''
+    tpurl = auth['url'] + '/rest/template/' + str(tId)
+    tmpX = json.loads(requests.get(tpurl, auth=(auth['user'],
+                                                auth['passwd'])).text)
+
+    xw = xd.parse(tmpX['content'])
+
+    return xw
+
 def listData(auth, posts, templ):
     '''
     Searches for all the values of the desired template posts defined in the list *keys* with an

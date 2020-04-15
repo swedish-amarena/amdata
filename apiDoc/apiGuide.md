@@ -47,7 +47,7 @@ be installed. Some other data handling modules are needed too.
 - json
 - xmltodict
 - pandas
-- io
+- io (probably in the default pythin installation)
 
 Use pip or repositories based on preference. Some packages are only
 available via pip.
@@ -57,9 +57,9 @@ If you run windows I think pip is the only way to go.
 for pip, based on platform, use either:
 
 ```
-$ pip install requests numpy json xmltodict pandas io
-$ pip3 install requests numpy json xmltodict pandas io
-$ python3 -m pip install requests numpy json xmltodict pandas io
+$ pip install requests numpy json xmltodict pandas
+$ pip3 install requests numpy json xmltodict pandas
+$ python3 -m pip install requests numpy json xmltodict pandas
 ```
 
 # The *requests* function
@@ -131,10 +131,10 @@ them useful too.
 
 ## How to use
 
-Put the pyApi folder in your PYTHON_PATH. __init__.py will make
-certain that python finds it. 
+Put the pyApi folder in your PYTHON_PATH or in in your working
+directory. The \_\_init\_\_.py file in the folder will make certain that python finds it.
 
-import:
+import the functions:
 ```
 from pyApi import amdataApi
 ```
@@ -142,19 +142,22 @@ from pyApi import amdataApi
 and you are ready to go.
 
 
-## The functions in amdataApi
+## The login credentials
 
-First, all functions needed a *auth* dict thast contain all
+First, all functions needed a *authUser* dict thast contain all
 authentifications including the location of the server.
 
 Each user has its own credentials
 
 ```
-auth = { 'url': 'https://amdata.proj.kth.se',
+authUser = { 'url': 'https://amdata.proj.kth.se',
          'user': 'username',
 		 'passwd': 'password'
 	   }
 ```
+
+## The functions in amdataApi
+
 
 ### sendBinaryFile
 
@@ -163,7 +166,7 @@ if the template has a 'blobid' field where it can be referenced.
 
 usage:
 
-    blobId = amdataApi.sendBinaryFile(filename, auth)
+    blobId = amdataApi.sendBinaryFile(filename, authUser)
 
 ### getBinaryFile
 
@@ -174,7 +177,7 @@ The name of the file that is downloaded will have the name *filename*
 
 usage:
     
-    amdataApi.getBinaryFile(dataid, filename, auth)
+    amdataApi.getBinaryFile(dataid, filename, authUser)
  
 ### addTemplate
 
@@ -184,7 +187,7 @@ the MDCS. See template documentation.
 
 usage:
 
-    amdataApi.addTemplate('template_filename.xsd', auth)
+    amdataApi.addTemplate('template_filename.xsd', authUser)
 
 
 ### templateId
@@ -196,8 +199,51 @@ returned
 
 usage:
 
-    tId = amdataApi.templateId(tmplName, auth)
+    tId = amdataApi.templateId(tmplName, authUser)
 	
+
+
+### listTemplates(authUser)
+
+Returns two dict with { 'name': 'id' } where 
+
+'name' is the given name for that template
+'id' is the id-number of the currently used version of the template
+     if an older version is needed use the requests command that 
+     is seen here in this function
+
+output: 
+
+- the Global templates
+- the User's templates
+
+usage:
+
+	dictG, dictU = amdataApi.listTemplates(authUser)
+
+
+### getTemplate(tId, auth):
+
+Returns the content part of the templateId instance as a dict.
+
+The content in that dict needs to be checked because the 
+structure varies dependent on how complex the template is.
+
+
+
+
+usage:
+
+    tpDict = amdataApi.getTemplate(tId, authUser)
+
+Typically the structure is that the posts are listed in either a list
+of dicts or as just one dict in:
+
+	tpDict['xsd:schema']['xsd:complexType']
+
+from there you are on your own.
+
+
 
 ### listData
 
@@ -208,7 +254,7 @@ Returns a list with dicts where the keys values are.
 
 usage:
 
-    utlist = amdataApi.listData(auth, keys, templ)
+    utlist = amdataApi.listData(authUser, keys, templ)
  
 
 ### getData
@@ -217,7 +263,7 @@ Returns the whole data post for one *id* in xml-format
 
 usage:
 
-    dataXml = amdataApi.getData(dataId, auth)
+    dataXml = amdataApi.getData(dataId, authUser)
 	
 
 ### makeGlobal
@@ -226,22 +272,24 @@ Assigns the *dataId* to the Global workspace
     
 usage:
 
-    amdataApi.makeGlobal(dataId, auth)
+    amdataApi.makeGlobal(dataId, authUser)
+
 
 ### sendData
 
 Sends a filled dict(*mdata*) to the MDCS based on the chosen template
-       
+
 **required in mdata**:  mdata['template']  (the given name of the template)
-
 bacause the rest of mdata[*] are mapped towards the template posts
-
 Returns the response for success check. 200 is OK!, the rest is error codes.
 
 usage:
 
-    resp = amdataApi.sendData(mdata, auth)
+    resp = amdataApi.sendData(mdata, authUser)
 
+
+This function is only supplied for syntax checking. How to fill a dataset
+with data heavily depends on the template. Plaese check the template
 
 
 ### saveAndMakeGlobal
@@ -251,5 +299,5 @@ data accessible to all.
 
 usage:
 
-    resp = amdataApi.saveAndMakeGlobal(mdataFull, auth):
+    resp = amdataApi.saveAndMakeGlobal(mdataFull, authUser):
 
